@@ -4,20 +4,35 @@ const express = require("express");
 const config = require("./config/config");
 const connectDB = require("./config/database");
 const globalErrorHandler = require("./middleware/globalErrorHandler");
-const createHttpError = require("http-errors");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 const app = express();
 
-const PORT = config.port;
+// ✅ CORS Setup
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
+
+// ✅ Middlewares
+app.use(express.json());
+app.use(cookieParser());
+
+// ✅ Connect Database
 connectDB();
 
-app.get("/", (req, res) => {
-  res.json({ message: "Hello from backend server" });
-});
+// ✅ Routes
+const userRoutes = require("./routes/userRoutes");
+app.use("/api/v1/users", userRoutes);
 
-// Global Error Handler
+// ✅ Global Error Handler
 app.use(globalErrorHandler);
 
+// ✅ Start Server
+const PORT = config.port || 3000;
 app.listen(PORT, () => {
-  console.log(`POS Server is listening on port ${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
