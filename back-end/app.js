@@ -26,7 +26,18 @@ connectDB();
 
 // ✅ Routes
 const userRoutes = require("./routes/userRoutes");
+const courseRoutes = require("./routes/courseRoutes");
+const enrollmentRoutes = require("./routes/enrollmentRoutes");
+const contactRoutes = require("./routes/contactRoutes");
+const freeTrialRoutes = require("./routes/freeTrialRoutes");
 app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/courses", courseRoutes);
+app.use("/api/v1/enrollments", enrollmentRoutes);
+
+
+app.use("/api/v1/free-trial", freeTrialRoutes);
+
+app.use("/api/v1/contact", contactRoutes);
 
 // ✅ Global Error Handler
 app.use(globalErrorHandler);
