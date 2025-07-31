@@ -30,6 +30,7 @@ import MadniQaida from "./pages/MadniQaida";
 import QuranMemorizationCourse from "./pages/QuranMemorization";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import FloatingButtons from "./components/shared/FloatingButtons";
 
 // Components
 import Header from "./components/shared/Header";
@@ -47,6 +48,7 @@ const AppContent = () => {
   return (
     <>
       {!hideLayout && <Header />}
+      <FloatingButtons />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
@@ -57,25 +59,40 @@ const AppContent = () => {
         <Route path="/teachers" element={<Teachers />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/namaz-course" element={<Namaz />} />
-        <Route path="/noorani-qaida-course" element={<NooraniQaida />} />
-        <Route path="/hadith-course" element={<Hadith />} />
-        <Route path="/nazrah-quran-course" element={<NazrahQuran />} />
-        <Route path="/6-kalma-course" element={<SixKalma />} />
-        <Route path="/tajweed-course" element={<TajweedCourse />} />
-        <Route path="/tafseer-course" element={<TafseerCourse />} />
-        <Route path="/ijazah-course" element={<IjazahCourse />} />
-        <Route path="/rehmani-qaida-course" element={<RehmaniQaida />} />
-        <Route path="/madni-qaida-course" element={<MadniQaida />} />
+        <Route path="/courses/namaz-course" element={<Namaz />} />
         <Route
-          path="/quran-memorization-course"
+          path="/courses/noorani-qaida-course"
+          element={<NooraniQaida />}
+        />
+        <Route path="courses/hadith-course" element={<Hadith />} />
+        <Route path="/courses/nazra-quran-course" element={<NazrahQuran />} />
+        <Route path="/courses/6-kalma-course" element={<SixKalma />} />
+        <Route
+          path="/courses/online-tajweed-course"
+          element={<TajweedCourse />}
+        />
+        <Route
+          path="/courses/online-tafseer-course"
+          element={<TafseerCourse />}
+        />
+        <Route
+          path="/courses/quraan-ijazah-course"
+          element={<IjazahCourse />}
+        />
+        <Route
+          path="/courses/rehmani-qaida-course"
+          element={<RehmaniQaida />}
+        />
+        <Route path="/courses/madni-qaida-course" element={<MadniQaida />} />
+        <Route
+          path="/courses/quran-memorization-course"
           element={<QuranMemorizationCourse />}
         />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       {!hideLayout && <BottomNav />}
     </>

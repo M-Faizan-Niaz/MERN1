@@ -20,13 +20,12 @@ const FloatingButtons = () => {
       {/* WhatsApp Floating Button */}
       <div className="fixed bottom-36 right-6 z-50 group">
         <a
-          href="https://wa.me/14099417108"
+          href="https://wa.me/923412517905?text=Hello%21%20I%27m%20interested%20in%20booking%20a%20free%20trial."
           target="_blank"
           rel="noopener noreferrer"
           className="bg-green-500 hover:bg-green-600 text-white w-14 h-14 flex items-center justify-center rounded-full shadow-lg transition duration-300"
           aria-label="WhatsApp Chat"
         >
-          {/* WhatsApp icon inside the green circle */}
           <i className="fab fa-whatsapp text-2xl"></i>
         </a>
         {/* Tooltip below the icon */}

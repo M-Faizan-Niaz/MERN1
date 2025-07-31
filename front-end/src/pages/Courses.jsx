@@ -65,7 +65,9 @@ useEffect(() => {
 
             <div className="text-center">
               <Link
-                to={`/courses/${course._id}`}
+                to={`/courses/${course.title
+                  .toLowerCase()
+                  .replace(/\s+/g, "-")}`}
                 className="inline-block mt-2 px-4 py-2 border border-[#967232] text-[#967232] rounded hover:bg-[#967232] hover:text-black transition-all duration-300"
               >
                 Read More
