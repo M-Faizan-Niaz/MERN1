@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import EnrollmentModal from "./EnrollmentModal";
 
 const AvailableCourses = () => {
   const [courses, setCourses] = useState([]);
+  const [selectedCourseId, setSelectedCourseId] = useState(null);
 
   useEffect(() => {
     axios
@@ -11,32 +13,38 @@ const AvailableCourses = () => {
       .catch((err) => console.error(err));
   }, []);
 
-  const enroll = (id) => {
-    axios
-      .post(`/api/v1/enrollments/${id}`, {}, { withCredentials: true })
-      .then(() => alert("Enrolled successfully!"))
-      .catch(() => alert("Enrollment failed."));
-  };
-
   return (
     <div className="bg-white rounded-xl shadow p-4">
-      <h3 className="text-lg font-semibold mb-2">Available Courses</h3>
+      <h3 className="text-lg font-semibold mb-4">Available Courses</h3>
+
       {courses.length === 0 ? (
         <p>No courses yet.</p>
       ) : (
         <ul>
           {courses.map((course) => (
-            <li key={course._id} className="mb-2">
+            <li
+              key={course._id}
+              className="mb-3 flex justify-between items-center"
+            >
               <span>{course.title}</span>
               <button
-                className="ml-4 text-sm text-white bg-green-600 px-3 py-1 rounded hover:bg-green-700"
-                onClick={() => enroll(course._id)}
+                className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded"
+                onClick={() => setSelectedCourseId(course._id)}
               >
                 Enroll
               </button>
             </li>
           ))}
         </ul>
+      )}
+
+      {/* Modal */}
+      {selectedCourseId && (
+        <EnrollmentModal
+          courseId={selectedCourseId}
+          onClose={() => setSelectedCourseId(null)}
+          onSuccess={() => console.log("Enrollment saved")}
+        />
       )}
     </div>
   );

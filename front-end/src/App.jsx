@@ -31,6 +31,7 @@ import QuranMemorizationCourse from "./pages/QuranMemorization";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import FloatingButtons from "./components/shared/FloatingButtons";
+import MyCourses from "./components/dashboard/MyCourses";
 
 // Components
 import Header from "./components/shared/Header";
@@ -38,6 +39,7 @@ import BottomNav from "./components/shared/BottomNav";
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import Dashboard from "./pages/DashBoard";
+
 
 const AppContent = () => {
   const location = useLocation();
@@ -60,6 +62,8 @@ const AppContent = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/courses/namaz-course" element={<Namaz />} />
+        <Route path="/dashboard/my-courses" element={<MyCourses />} />
+
         <Route
           path="/courses/noorani-qaida-course"
           element={<NooraniQaida />}
@@ -93,7 +97,9 @@ const AppContent = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+       
       </Routes>
+     
       {!hideLayout && <BottomNav />}
     </>
   );
