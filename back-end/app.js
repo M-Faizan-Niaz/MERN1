@@ -33,7 +33,8 @@ const freeTrialRoutes = require("./routes/freeTrialRoutes");
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/courses", courseRoutes);
 app.use("/api/v1/enrollments", enrollmentRoutes);
-
+const adminRoutes = require("./routes/adminRoutes");
+app.use("/api/v1/admin", adminRoutes);
 
 app.use("/api/v1/free-trial", freeTrialRoutes);
 

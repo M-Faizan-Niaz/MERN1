@@ -11,5 +11,6 @@ router.post("/enroll/:courseId", enrollmentController.enrollInCourse);
 
 // Get my enrollments
 router.get("/my-enrollments", enrollmentController.getMyEnrollments);
+router.delete("/cancel/:courseId", enrollmentController.cancelEnrollment);
 
 module.exports = router;
