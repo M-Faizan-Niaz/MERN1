@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SnackbarProvider } from "notistack";
 
+
 // Create a QueryClient instance
 const queryClient = new QueryClient();
 

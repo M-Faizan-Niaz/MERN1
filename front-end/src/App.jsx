@@ -40,7 +40,6 @@ import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import Dashboard from "./pages/DashBoard";
 
-
 const AppContent = () => {
   const location = useLocation();
 
@@ -97,9 +96,8 @@ const AppContent = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-       
       </Routes>
-     
+
       {!hideLayout && <BottomNav />}
     </>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Courses from "./Courses";
-import tafseerImg from "../assets/images/tafseer.png"; // Replace with actual image path
+import tafseerImg from "../assets/images/hadith.png"; // Replace with actual image path
 
 const IjazahCourse = () => {
   const [activeTab, setActiveTab] = useState("What is Ijazah?");

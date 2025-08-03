@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaHome, FaChalkboardTeacher, FaRegNewspaper } from "react-icons/fa";
 import { TbCash } from "react-icons/tb";
 import { IoIosContact } from "react-icons/io";
@@ -15,6 +15,8 @@ const navItems = [
 ];
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <header className="bg-black w-full mt-6 px-4 md:px-8 py-3 shadow-lg z-50 relative">
       <div className="flex flex-col items-center justify-center gap-4">
@@ -81,6 +83,22 @@ const Header = () => {
                 About Us
               </NavLink>
             </div>
+          </div>
+
+          {/* Login & Signup Buttons */}
+          <div className="flex gap-2 mt-2 sm:mt-0">
+            <button
+              onClick={() => navigate("/login")}
+              className="px-4 py-1.5 sm:px-5 sm:py-2 bg-transparent text-[#c49833] border border-[#c49833] hover:bg-[#c49833] hover:text-white transition-all duration-300 rounded-full text-sm sm:text-base font-semibold"
+            >
+              Login
+            </button>
+            <button
+              onClick={() => navigate("/signup")}
+              className="px-4 py-1.5 sm:px-5 sm:py-2 bg-[#c49833] text-white hover:bg-[#a97e1c] transition-all duration-300 rounded-full text-sm sm:text-base font-semibold"
+            >
+              Signup
+            </button>
           </div>
         </nav>
       </div>

@@ -64,7 +64,7 @@ const ContactUs = () => {
             </li>
             <li className="flex items-center gap-3">
               <FaEnvelope className="text-[#c49833]" />{" "}
-              info@internationalquranacademy.com
+              info@al-hidayahquranacademy.com
             </li>
             <li className="flex items-center gap-3">
               <SiWhatsapp className="text-green-400" /> +92 345 858 1717
