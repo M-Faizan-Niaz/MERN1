@@ -34,11 +34,16 @@ app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/courses", courseRoutes);
 app.use("/api/v1/enrollments", enrollmentRoutes);
 const adminRoutes = require("./routes/adminRoutes");
+const { default: foodRouter } = require("./routes/foodRoutes");
 app.use("/api/v1/admin", adminRoutes);
 
 app.use("/api/v1/free-trial", freeTrialRoutes);
 
 app.use("/api/v1/contact", contactRoutes);
+
+
+app.use('/api/food', foodRouter);
+app.use('/images', express.static('uploads'));
 
 // ✅ Global Error Handler
 app.use(globalErrorHandler);
