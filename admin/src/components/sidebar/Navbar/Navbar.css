@@ -6,9 +6,17 @@
 
 }
 
-.navbar .logo {
-    width:  max (10%, 80px);
+.logo {
+  width: 80px;                /* w-20 */
+  height: 80px;               /* h-20 */
+  object-fit: contain;        /* object-contain */
+  transition: transform 0.3s; /* transition-transform duration-300 */
 }
+
+.logo:hover {
+  transform: scale(1.10);     /* hover:scale-110 */
+}
+
 
 .navbar .profile {
     width: 40 px

@@ -1,0 +1,56 @@
+.list-teachers {
+  width: 70%;
+  margin-left: max(5vw, 25px);
+  margin-top: 50px;
+  color: #444;
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.list-table {
+  margin-top: 20px;
+}
+
+.list-table-format {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1fr 1.5fr 0.5fr;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border: 1px solid #d9d9d9;
+  font-size: 14px;
+  background-color: #fff;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.list-table-format.title {
+  background-color: #f2f6fc;
+  font-weight: bold;
+  border: 1px solid #b3d1ff;
+}
+
+.list-table-format img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.delete-btn {
+  color: red;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .list-table-format {
+    grid-template-columns: 1fr 2fr 1fr;
+    font-size: 12px;
+  }
+
+  .list-table-format.title {
+    display: none;
+  }
+}

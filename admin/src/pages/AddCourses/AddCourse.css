@@ -1,0 +1,78 @@
+.add-teacher {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.add-teacher form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-section {
+  align-items: center;
+  text-align: center;
+}
+
+.upload-section img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px dashed #ccc;
+  transition: border 0.3s;
+}
+
+.upload-section img:hover {
+  border: 2px dashed #666;
+}
+
+.field-group p {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.field-group input,
+.field-group textarea,
+.field-group select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+
+.field-group input:focus,
+.field-group textarea:focus,
+.field-group select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.submit-btn {
+  padding: 12px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
