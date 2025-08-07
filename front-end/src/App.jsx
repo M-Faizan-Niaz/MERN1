@@ -57,7 +57,10 @@ const AppContent = () => {
         <Route path="/library" element={<Library />} />
         <Route path="/fee" element={<Fee />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/teachers" element={<Teachers />} />
+        <Route
+          path="/teachers"
+          element={<Teachers url="http://localhost:5000" />}
+        />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/courses/namaz-course" element={<Namaz />} />
