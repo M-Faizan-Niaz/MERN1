@@ -32,6 +32,17 @@ exports.enrollInCourse = catchAsync(async (req, res) => {
     data: { enrollment },
   });
 });
+exports.getEnrollmentsByCourse = catchAsync(async (req, res) => {
+  const { courseId } = req.params;
+
+  const enrollments = await Enrollment.find({ course: courseId });
+
+  res.status(200).json({
+    success: true,
+    data: enrollments,
+  });
+});
+
 
 exports.getMyEnrollments = catchAsync(async (req, res) => {
   const enrollments = await Enrollment.find({ user: req.user.id }).populate(
